@@ -2,3 +2,24 @@ git log --name-status --pretty=format:
 M       test.docx
 A       test.docx
 
+C:\svn_proj>"C:\Program Files (x86)\Subversion\bin\svn.exe" log -v -r 3:5
+------------------------------------------------------------------------
+r3 | adanilenko | 2011-04-28 11:19:17 +0300 (Thu, 28 Apr 2011) | 1 line
+Changed paths:
+   M /project/trunk/1.txt
+
+
+------------------------------------------------------------------------
+r4 | adanilenko | 2011-04-28 11:19:35 +0300 (Thu, 28 Apr 2011) | 1 line
+Changed paths:
+   M /project/trunk/1.txt
+
+
+------------------------------------------------------------------------
+r5 | adanilenko | 2011-04-28 11:26:04 +0300 (Thu, 28 Apr 2011) | 1 line
+Changed paths:
+   A /project/trunk/2
+   A /project/trunk/2/2.txt
+
+next
+------------------------------------------------------------------------
