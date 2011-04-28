@@ -1,0 +1,4 @@
+git log --name-status --pretty=format:
+M       test.docx
+A       test.docx
+
