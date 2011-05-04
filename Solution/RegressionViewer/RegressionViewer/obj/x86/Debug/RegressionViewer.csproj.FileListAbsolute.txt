@@ -1,0 +1,13 @@
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\RegressionViewer.exe
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\RegressionViewer.pdb
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\TriStateTreeView.pdb
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\TriStateTreeView.xml
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Form1.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Properties.Resources.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.exe
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.pdb
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\RegressionViewer.exe.config
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\Aga.Controls.dll

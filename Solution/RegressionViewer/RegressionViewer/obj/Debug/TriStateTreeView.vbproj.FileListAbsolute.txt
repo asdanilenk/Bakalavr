@@ -1,0 +1,13 @@
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\TriStateTreeView.dll
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\TriStateTreeView.pdb
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\TriStateTreeView.xml
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\TriStateTreeView.dll
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\TriStateTreeView.pdb
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\TriStateTreeView.xml
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\Debug\ResolveAssemblyReference.cache
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\Debug\TriStateTreeView.TriStateTreeView.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\Debug\TriStateTreeView.dll
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\Debug\TriStateTreeView.xml
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\Debug\TriStateTreeView.pdb
