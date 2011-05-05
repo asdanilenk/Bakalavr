@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.treeViewAdv1 = new Aga.Controls.Tree.TreeViewAdv();
+            this.treeColumn1 = new Aga.Controls.Tree.TreeColumn();
+            this.treeColumn2 = new Aga.Controls.Tree.TreeColumn();
             this._nodeCheckBox = new Aga.Controls.Tree.NodeControls.NodeCheckBox();
             this._nodeStateIcon = new Aga.Controls.Tree.NodeControls.NodeStateIcon();
-            this._nodeTextBox = new Aga.Controls.Tree.NodeControls.NodeTextBox();
+            this._nodeName = new Aga.Controls.Tree.NodeControls.NodeTextBox();
+            this._nodeModule = new Aga.Controls.Tree.NodeControls.NodeComboBox();
             this.SuspendLayout();
             // 
             // treeViewAdv1
@@ -42,6 +45,8 @@
             this.treeViewAdv1.AutoRowHeight = true;
             this.treeViewAdv1.BackColor = System.Drawing.SystemColors.Window;
             this.treeViewAdv1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.treeViewAdv1.Columns.Add(this.treeColumn1);
+            this.treeViewAdv1.Columns.Add(this.treeColumn2);
             this.treeViewAdv1.Cursor = System.Windows.Forms.Cursors.Default;
             this.treeViewAdv1.DefaultToolTipProvider = null;
             this.treeViewAdv1.DragDropMarkColor = System.Drawing.Color.Black;
@@ -52,12 +57,28 @@
             this.treeViewAdv1.Name = "treeViewAdv1";
             this.treeViewAdv1.NodeControls.Add(this._nodeCheckBox);
             this.treeViewAdv1.NodeControls.Add(this._nodeStateIcon);
-            this.treeViewAdv1.NodeControls.Add(this._nodeTextBox);
+            this.treeViewAdv1.NodeControls.Add(this._nodeName);
+            this.treeViewAdv1.NodeControls.Add(this._nodeModule);
             this.treeViewAdv1.SelectedNode = null;
-            this.treeViewAdv1.SelectionMode = Aga.Controls.Tree.TreeSelectionMode.MultiSameParent;
-            this.treeViewAdv1.Size = new System.Drawing.Size(309, 301);
+            this.treeViewAdv1.SelectionMode = Aga.Controls.Tree.TreeSelectionMode.Multi;
+            this.treeViewAdv1.Size = new System.Drawing.Size(305, 301);
             this.treeViewAdv1.TabIndex = 2;
             this.treeViewAdv1.Text = "treeViewAdv1";
+            this.treeViewAdv1.UseColumns = true;
+            // 
+            // treeColumn1
+            // 
+            this.treeColumn1.Header = "Path";
+            this.treeColumn1.SortOrder = System.Windows.Forms.SortOrder.None;
+            this.treeColumn1.TooltipText = null;
+            this.treeColumn1.Width = 220;
+            // 
+            // treeColumn2
+            // 
+            this.treeColumn2.Header = "Module";
+            this.treeColumn2.SortOrder = System.Windows.Forms.SortOrder.None;
+            this.treeColumn2.TooltipText = null;
+            this.treeColumn2.Width = 80;
             // 
             // _nodeCheckBox
             // 
@@ -65,22 +86,33 @@
             this._nodeCheckBox.EditEnabled = true;
             this._nodeCheckBox.IncrementalSearchEnabled = true;
             this._nodeCheckBox.LeftMargin = 0;
-            this._nodeCheckBox.ParentColumn = null;
-            
+            this._nodeCheckBox.ParentColumn = this.treeColumn1;
             // 
             // _nodeStateIcon
             // 
             this._nodeStateIcon.LeftMargin = 1;
-            this._nodeStateIcon.ParentColumn = null;
+            this._nodeStateIcon.ParentColumn = this.treeColumn1;
             this._nodeStateIcon.ScaleMode = Aga.Controls.Tree.ImageScaleMode.Clip;
             // 
-            // _nodeTextBox
+            // _nodeName
             // 
-            this._nodeTextBox.DataPropertyName = "Text";
-            this._nodeTextBox.EditEnabled = true;
-            this._nodeTextBox.IncrementalSearchEnabled = true;
-            this._nodeTextBox.LeftMargin = 3;
-            this._nodeTextBox.ParentColumn = null;
+            this._nodeName.DataPropertyName = "Text";
+            this._nodeName.EditEnabled = true;
+            this._nodeName.IncrementalSearchEnabled = true;
+            this._nodeName.LeftMargin = 3;
+            this._nodeName.ParentColumn = this.treeColumn1;
+            // 
+            // _nodeModule
+            // 
+            this._nodeModule.DataPropertyName = "Module";
+            this._nodeModule.DropDownItems.Add("2");
+            this._nodeModule.DropDownItems.Add("3");
+            this._nodeModule.DropDownItems.Add("4");
+            this._nodeModule.EditEnabled = true;
+            this._nodeModule.EditOnClick = true;
+            this._nodeModule.IncrementalSearchEnabled = true;
+            this._nodeModule.LeftMargin = 3;
+            this._nodeModule.ParentColumn = this.treeColumn2;
             // 
             // Form1
             // 
@@ -100,7 +132,10 @@
         private Aga.Controls.Tree.TreeViewAdv treeViewAdv1;
         private Aga.Controls.Tree.NodeControls.NodeCheckBox _nodeCheckBox;
         private Aga.Controls.Tree.NodeControls.NodeStateIcon _nodeStateIcon;
-        private Aga.Controls.Tree.NodeControls.NodeTextBox _nodeTextBox;
+        private Aga.Controls.Tree.NodeControls.NodeTextBox _nodeName;
+        private Aga.Controls.Tree.TreeColumn treeColumn1;
+        private Aga.Controls.Tree.TreeColumn treeColumn2;
+        private Aga.Controls.Tree.NodeControls.NodeComboBox _nodeModule;
 		
     }
 }

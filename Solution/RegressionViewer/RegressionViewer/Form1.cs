@@ -21,8 +21,9 @@ namespace RegressionViewer
         {
             string baseName = "Program.db3";
             ConnectionManager.filename = baseName;
-            string folder = "C:\\Bakalavr\\";
-            /*
+            string folder = "C:\\Bakalavr\\Solution\\RegressionViewer\\RegressionViewer\\bin";
+
+            SQLiteConnection.CreateFile(baseName);
             using (SQLiteCommand command = new SQLiteCommand(ConnectionManager.connection))
                 {
                     command.CommandText = @"drop TABLE if exists folders;";
@@ -50,18 +51,30 @@ namespace RegressionViewer
                 }
 
             using (SQLiteCommand command = new SQLiteCommand(ConnectionManager.connection))
+            {
+                command.CommandText = @"CREATE TABLE [modules] (
+                    [id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    [name] char(255) NOT NULL
+                    );";
+                command.CommandType = CommandType.Text;
+                command.ExecuteNonQuery();
+            }
+
+            using (SQLiteCommand command = new SQLiteCommand(ConnectionManager.connection))
                 {
                     command.CommandText = @"CREATE TABLE [files] (
                     [id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
                     [p_id] integer NOT NULL,
                     [name] char(255) NOT NULL,
+                    [module_id] integer,
                     FOREIGN KEY (p_id) REFERENCES folders (id)
+                    FOREIGN KEY (module_id) REFERENCES modules (id)
                     );";
                     command.CommandType = CommandType.Text;
                     command.ExecuteNonQuery();
                 }
                 AddDirectoriesRecursively(folder, null);
-              */
+              
             InitializeComponent();
         }
 
@@ -102,6 +115,12 @@ namespace RegressionViewer
             treeViewAdv1.Model = new SlowTreeModel();
         }
 
+        private void _nodeModule_ChangesApplied(object sender, EventArgs e)
+        {
+            
+        }
+
+        
     }
 }
 
