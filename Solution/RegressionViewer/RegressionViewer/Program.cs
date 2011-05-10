@@ -17,6 +17,7 @@ namespace RegressionViewer
             Application.SetCompatibleTextRenderingDefault(false);
             Form1 f1 = new Form1();
             Application.Run(f1);
+            ConnectionManager.CloseConnection();
         }
     }
 }

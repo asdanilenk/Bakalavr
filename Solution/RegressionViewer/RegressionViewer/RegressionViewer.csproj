@@ -56,10 +56,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="TriStateTreeView, Version=1.0.4140.41791, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\TriStateTreeView.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionManager.cs" />
@@ -71,7 +67,23 @@
     </Compile>
     <Compile Include="NodeModule.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="ProgramDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProgramDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RelationshipsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelationshipsForm.Designer.cs">
+      <DependentUpon>RelationshipsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RelsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SlowTreeModel.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -86,7 +98,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RelationshipsForm.resx">
+      <DependentUpon>RelationshipsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ProgramDataSet.xsc">
+      <DependentUpon>ProgramDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProgramDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProgramDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProgramDataSet.xss">
+      <DependentUpon>ProgramDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +122,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RelsDataSet.xsc">
+      <DependentUpon>RelsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RelsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RelsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RelsDataSet.xss">
+      <DependentUpon>RelsDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
