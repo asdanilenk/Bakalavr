@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RelsDataSet" targetNamespace="http://tempuri.org/RelsDataSet.xsd" xmlns:mstns="http://tempuri.org/RelsDataSet.xsd" xmlns="http://tempuri.org/RelsDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ProgramConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ProgramConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RegressionViewer.Properties.Settings.GlobalReference.Default.ProgramConnectionString" Provider="System.Data.SQLite" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="relsTableAdapter" GeneratorDataComponentClassName="relsTableAdapter" Name="rels" UserDataComponentName="relsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ProgramConnectionString (Settings)" DbObjectName="main.rels" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [uses], [uses_module], [used], [used_module], [rate] FROM [rels]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="[uses]" DataSetColumn="[uses]" />
+              <Mapping SourceColumn="[uses_module]" DataSetColumn="[uses_module]" />
+              <Mapping SourceColumn="[used]" DataSetColumn="[used]" />
+              <Mapping SourceColumn="[used_module]" DataSetColumn="[used_module]" />
+              <Mapping SourceColumn="[rate]" DataSetColumn="[rate]" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RelsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="RelsDataSet" msprop:Generator_UserDSName="RelsDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rels" msprop:Generator_TableClassName="relsDataTable" msprop:Generator_TableVarName="tablerels" msprop:Generator_TablePropName="rels" msprop:Generator_RowDeletingName="relsRowDeleting" msprop:Generator_UserTableName="rels" msprop:Generator_RowChangingName="relsRowChanging" msprop:Generator_RowEvHandlerName="relsRowChangeEventHandler" msprop:Generator_RowDeletedName="relsRowDeleted" msprop:Generator_RowEvArgName="relsRowChangeEvent" msprop:Generator_RowChangedName="relsRowChanged" msprop:Generator_RowClassName="relsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="_x005B_uses_x005D_" msprop:Generator_ColumnVarNameInTable="_column_uses_" msprop:Generator_ColumnPropNameInRow="__uses_" msprop:Generator_ColumnPropNameInTable="__uses_Column" msprop:Generator_UserColumnName="[uses]">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="_x005B_uses_module_x005D_" msprop:Generator_ColumnVarNameInTable="_column_uses_module_" msprop:Generator_ColumnPropNameInRow="__uses_module_" msprop:Generator_ColumnPropNameInTable="__uses_module_Column" msprop:Generator_UserColumnName="[uses_module]">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="_x005B_used_x005D_" msprop:Generator_ColumnVarNameInTable="_column_used_" msprop:Generator_ColumnPropNameInRow="__used_" msprop:Generator_ColumnPropNameInTable="__used_Column" msprop:Generator_UserColumnName="[used]">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="_x005B_used_module_x005D_" msprop:Generator_ColumnVarNameInTable="_column_used_module_" msprop:Generator_ColumnPropNameInRow="__used_module_" msprop:Generator_ColumnPropNameInTable="__used_module_Column" msprop:Generator_UserColumnName="[used_module]">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="_x005B_rate_x005D_" msprop:Generator_ColumnVarNameInTable="_column_rate_" msprop:Generator_ColumnPropNameInRow="__rate_" msprop:Generator_ColumnPropNameInTable="__rate_Column" msprop:Generator_UserColumnName="[rate]" type="xs:long" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
