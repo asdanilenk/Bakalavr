@@ -47,7 +47,7 @@
             this.modulesContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteModulesContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.programDataSet = new RegressionViewer.ProgramDataSet();
+            this.programDataSet = new RegressionViewer.ModulesDataSet();
             this.applyButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.modulesTableAdapter = new RegressionViewer.ProgramDataSetTableAdapters.modulesTableAdapter();
@@ -254,6 +254,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.TreeView_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.treeContextMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.modulesView)).EndInit();
             this.modulesContextMenu.ResumeLayout(false);
@@ -272,7 +273,7 @@
         private Aga.Controls.Tree.TreeColumn modulesColumn;
         private Aga.Controls.Tree.NodeControls.NodeComboBox treeNodeModule;
         private System.Windows.Forms.DataGridView modulesView;
-        private ProgramDataSet programDataSet;
+        private ModulesDataSet programDataSet;
         private System.Windows.Forms.BindingSource modulesBindingSource;
         private ProgramDataSetTableAdapters.modulesTableAdapter modulesTableAdapter;
         private System.Windows.Forms.Button applyButton;

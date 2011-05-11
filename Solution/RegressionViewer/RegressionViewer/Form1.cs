@@ -24,11 +24,11 @@ namespace RegressionViewer
             ConnectionManager.filename = baseName;
            // SQLiteConnection.CreateFile(baseName);
            // CreateDB();
-            AddDirectoriesRecursively(folder, null);
+           // AddDirectoriesRecursively(folder, null);
            
             ConnectionManager.ExecuteNonQuery("PRAGMA foreign_keys = true;");
             InitializeComponent();
-            (new RelationshipsForm()).ShowDialog();
+            
         }
 
         private static void CreateDB()
@@ -116,7 +116,9 @@ namespace RegressionViewer
             
             treeView.Model = new SlowTreeModel();
 
-            UpdateModulesDropDown();            
+            UpdateModulesDropDown();
+
+            
         }
 
         private void UpdateModulesDropDown()
@@ -233,6 +235,11 @@ namespace RegressionViewer
         private void deleteModulesContextMenuItem_Click(object sender, EventArgs e)
         {
             modulesView.Rows.RemoveAt(modulesView.SelectedCells[0].RowIndex);
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            (new AddRelation()).ShowDialog();
         }
 
        /* private void deleteModulesContextMenuItem_MouseDown(object sender, MouseEventArgs e)

@@ -58,7 +58,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(13, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(549, 150);
+            this.dataGridView1.RowHeadersWidth = 21;
+            this.dataGridView1.Size = new System.Drawing.Size(583, 237);
             this.dataGridView1.TabIndex = 0;
             // 
             // relsDataSet
@@ -78,35 +79,37 @@
             // usesDataGridViewTextBoxColumn
             // 
             this.usesDataGridViewTextBoxColumn.DataPropertyName = "[uses]";
-            this.usesDataGridViewTextBoxColumn.HeaderText = "[uses]";
+            this.usesDataGridViewTextBoxColumn.HeaderText = "File that uses";
             this.usesDataGridViewTextBoxColumn.Name = "usesDataGridViewTextBoxColumn";
             this.usesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usesDataGridViewTextBoxColumn.Width = 120;
             // 
             // usesmoduleDataGridViewTextBoxColumn
             // 
             this.usesmoduleDataGridViewTextBoxColumn.DataPropertyName = "[uses_module]";
-            this.usesmoduleDataGridViewTextBoxColumn.HeaderText = "[uses_module]";
+            this.usesmoduleDataGridViewTextBoxColumn.HeaderText = "Module";
             this.usesmoduleDataGridViewTextBoxColumn.Name = "usesmoduleDataGridViewTextBoxColumn";
             this.usesmoduleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // usedDataGridViewTextBoxColumn
             // 
             this.usedDataGridViewTextBoxColumn.DataPropertyName = "[used]";
-            this.usedDataGridViewTextBoxColumn.HeaderText = "[used]";
+            this.usedDataGridViewTextBoxColumn.HeaderText = "File that is used";
             this.usedDataGridViewTextBoxColumn.Name = "usedDataGridViewTextBoxColumn";
             this.usedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.usedDataGridViewTextBoxColumn.Width = 120;
             // 
             // usedmoduleDataGridViewTextBoxColumn
             // 
             this.usedmoduleDataGridViewTextBoxColumn.DataPropertyName = "[used_module]";
-            this.usedmoduleDataGridViewTextBoxColumn.HeaderText = "[used_module]";
+            this.usedmoduleDataGridViewTextBoxColumn.HeaderText = "Module";
             this.usedmoduleDataGridViewTextBoxColumn.Name = "usedmoduleDataGridViewTextBoxColumn";
             this.usedmoduleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // rateDataGridViewTextBoxColumn
             // 
             this.rateDataGridViewTextBoxColumn.DataPropertyName = "[rate]";
-            this.rateDataGridViewTextBoxColumn.HeaderText = "[rate]";
+            this.rateDataGridViewTextBoxColumn.HeaderText = "Rate of usage";
             this.rateDataGridViewTextBoxColumn.Name = "rateDataGridViewTextBoxColumn";
             this.rateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
