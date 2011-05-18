@@ -13,72 +13,28 @@ using Aga.Controls.Tree;
 using Aga.Controls.Tree.NodeControls;
 using Aga.Controls;
 
-namespace RegressionViewer
+namespace RegressionViewer.Forms
 {
-    public partial class Form1 : Form
+    public partial class TreeForm : Form
     {
-        public Form1()
+        public TreeForm()
         {
             string baseName = "Program.db3";
             string folder = "C:\\Bakalavr\\Solution\\RegressionViewer\\RegressionViewer\\bin";
+            
             ConnectionManager.filename = baseName;
-           // SQLiteConnection.CreateFile(baseName);
-           // CreateDB();
-           // AddDirectoriesRecursively(folder, null);
+            
+            //SQLiteConnection.CreateFile(baseName);
+            //ConnectionManager.CreateDB();
+            //AddDirectoriesRecursively(folder, null);
            
             ConnectionManager.ExecuteNonQuery("PRAGMA foreign_keys = true;");
             InitializeComponent();
+            this.modulesTableAdapter.Connection.ConnectionString = ConnectionManager.ConnectionString;
             
         }
 
-        private static void CreateDB()
-        {
-            ConnectionManager.ExecuteNonQuery(@"CREATE TABLE [folders] (
-                    [id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-                    [p_id] integer,
-                    [name] char(255) NOT NULL,
-                    FOREIGN KEY (p_id) REFERENCES folders (id) on delete cascade
-                    );");
-            ConnectionManager.ExecuteNonQuery(@"CREATE TABLE [modules] (
-                    [id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-                    [name] char(255) NOT NULL
-                    );");
-            ConnectionManager.ExecuteNonQuery(@"CREATE TABLE [files] (
-                    [id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
-                    [p_id] integer NOT NULL,
-                    [name] char(255) NOT NULL,
-                    [module_id] integer,
-                    FOREIGN KEY (p_id) REFERENCES folders (id) on delete cascade
-                    FOREIGN KEY (module_id) REFERENCES modules (id) on delete set NULL
-                    );");
-            ConnectionManager.ExecuteNonQuery(@"CREATE TABLE [relationships] (
-                    [uses]  INTEGER NOT NULL,
-                    [id]  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-                    [used]  INTEGER NOT NULL,
-                    FOREIGN KEY (uses) REFERENCES files (id) ON DELETE CASCADE,
-                    FOREIGN KEY (used) REFERENCES files (id) ON DELETE CASCADE
-                    );");
-            ConnectionManager.ExecuteNonQuery(@"CREATE VIEW [rels] AS 
-                    SELECT
-                    f1.name AS uses,
-                    m1.name AS uses_module,
-                    f2.name AS used,
-                    m2.name AS used_module,
-                    relationships.rate AS rate
-                    FROM
-                    modules AS m1 ,
-                    files AS f1 ,
-                    relationships ,
-                    modules AS m2 ,
-                    files AS f2
-                    WHERE
-                    m1.id = f1.module_id AND
-                    m2.id = f2.module_id AND
-                    relationships.uses = f1.id AND
-                    relationships.used = f2.id;");
-
-
-        }
+        
 
         public void AddDirectoriesRecursively(string folder, int? p_id)
         {
@@ -239,7 +195,17 @@ namespace RegressionViewer
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            (new AddRelation()).ShowDialog();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            (new RelationshipsForm()).ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            (new GraphForm()).ShowDialog();
         }
 
        /* private void deleteModulesContextMenuItem_MouseDown(object sender, MouseEventArgs e)

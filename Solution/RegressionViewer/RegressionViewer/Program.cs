@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using RegressionViewer.Forms;
 
 namespace RegressionViewer
 {
@@ -15,7 +16,7 @@ namespace RegressionViewer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form1 f1 = new Form1();
+            TreeForm f1 = new TreeForm();
             Application.Run(f1);
             ConnectionManager.CloseConnection();
         }

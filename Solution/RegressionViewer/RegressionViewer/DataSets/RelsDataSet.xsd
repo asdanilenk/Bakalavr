@@ -9,21 +9,23 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="relsTableAdapter" GeneratorDataComponentClassName="relsTableAdapter" Name="rels" UserDataComponentName="relsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ProgramConnectionString (Settings)" DbObjectName="main.rels" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ProgramConnectionString (Settings)" DbObjectName="main.rels" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [uses], [uses_module], [used], [used_module], [rate] FROM [rels]</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        uses, uses_module, used, used_module, rate, id
+FROM            rels</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="[uses]" DataSetColumn="[uses]" />
-              <Mapping SourceColumn="[uses_module]" DataSetColumn="[uses_module]" />
-              <Mapping SourceColumn="[used]" DataSetColumn="[used]" />
-              <Mapping SourceColumn="[used_module]" DataSetColumn="[used_module]" />
-              <Mapping SourceColumn="[rate]" DataSetColumn="[rate]" />
+              <Mapping SourceColumn="uses" DataSetColumn="uses" />
+              <Mapping SourceColumn="uses_module" DataSetColumn="uses_module" />
+              <Mapping SourceColumn="used" DataSetColumn="used" />
+              <Mapping SourceColumn="used_module" DataSetColumn="used_module" />
+              <Mapping SourceColumn="rate" DataSetColumn="rate" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -38,39 +40,44 @@
         <xs:element name="rels" msprop:Generator_TableClassName="relsDataTable" msprop:Generator_TableVarName="tablerels" msprop:Generator_TablePropName="rels" msprop:Generator_RowDeletingName="relsRowDeleting" msprop:Generator_UserTableName="rels" msprop:Generator_RowChangingName="relsRowChanging" msprop:Generator_RowEvHandlerName="relsRowChangeEventHandler" msprop:Generator_RowDeletedName="relsRowDeleted" msprop:Generator_RowEvArgName="relsRowChangeEvent" msprop:Generator_RowChangedName="relsRowChanged" msprop:Generator_RowClassName="relsRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="_x005B_uses_x005D_" msprop:Generator_ColumnVarNameInTable="_column_uses_" msprop:Generator_ColumnPropNameInRow="__uses_" msprop:Generator_ColumnPropNameInTable="__uses_Column" msprop:Generator_UserColumnName="[uses]">
+              <xs:element name="uses" msprop:Generator_ColumnVarNameInTable="columnuses" msprop:Generator_ColumnPropNameInRow="uses" msprop:Generator_ColumnPropNameInTable="usesColumn" msprop:Generator_UserColumnName="uses">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="_x005B_uses_module_x005D_" msprop:Generator_ColumnVarNameInTable="_column_uses_module_" msprop:Generator_ColumnPropNameInRow="__uses_module_" msprop:Generator_ColumnPropNameInTable="__uses_module_Column" msprop:Generator_UserColumnName="[uses_module]">
+              <xs:element name="uses_module" msprop:Generator_ColumnVarNameInTable="columnuses_module" msprop:Generator_ColumnPropNameInRow="uses_module" msprop:Generator_ColumnPropNameInTable="uses_moduleColumn" msprop:Generator_UserColumnName="uses_module">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="_x005B_used_x005D_" msprop:Generator_ColumnVarNameInTable="_column_used_" msprop:Generator_ColumnPropNameInRow="__used_" msprop:Generator_ColumnPropNameInTable="__used_Column" msprop:Generator_UserColumnName="[used]">
+              <xs:element name="used" msprop:Generator_ColumnVarNameInTable="columnused" msprop:Generator_ColumnPropNameInRow="used" msprop:Generator_ColumnPropNameInTable="usedColumn" msprop:Generator_UserColumnName="used">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="_x005B_used_module_x005D_" msprop:Generator_ColumnVarNameInTable="_column_used_module_" msprop:Generator_ColumnPropNameInRow="__used_module_" msprop:Generator_ColumnPropNameInTable="__used_module_Column" msprop:Generator_UserColumnName="[used_module]">
+              <xs:element name="used_module" msprop:Generator_ColumnVarNameInTable="columnused_module" msprop:Generator_ColumnPropNameInRow="used_module" msprop:Generator_ColumnPropNameInTable="used_moduleColumn" msprop:Generator_UserColumnName="used_module">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="_x005B_rate_x005D_" msprop:Generator_ColumnVarNameInTable="_column_rate_" msprop:Generator_ColumnPropNameInRow="__rate_" msprop:Generator_ColumnPropNameInTable="__rate_Column" msprop:Generator_UserColumnName="[rate]" type="xs:long" />
+              <xs:element name="rate" msprop:Generator_ColumnVarNameInTable="columnrate" msprop:Generator_ColumnPropNameInRow="rate" msprop:Generator_ColumnPropNameInTable="rateColumn" msprop:Generator_UserColumnName="rate" type="xs:long" />
+              <xs:element name="id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:long" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:rels" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

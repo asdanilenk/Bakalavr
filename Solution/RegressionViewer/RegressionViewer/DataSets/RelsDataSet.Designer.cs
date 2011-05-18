@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace RegressionViewer {
+namespace RegressionViewer.DataSets {
     
     
     /// <summary>
@@ -279,15 +279,17 @@ namespace RegressionViewer {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class relsDataTable : global::System.Data.TypedTableBase<relsRow> {
             
-            private global::System.Data.DataColumn _column_uses_;
+            private global::System.Data.DataColumn columnuses;
             
-            private global::System.Data.DataColumn _column_uses_module_;
+            private global::System.Data.DataColumn columnuses_module;
             
-            private global::System.Data.DataColumn _column_used_;
+            private global::System.Data.DataColumn columnused;
             
-            private global::System.Data.DataColumn _column_used_module_;
+            private global::System.Data.DataColumn columnused_module;
             
-            private global::System.Data.DataColumn _column_rate_;
+            private global::System.Data.DataColumn columnrate;
+            
+            private global::System.Data.DataColumn columnid;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -324,41 +326,49 @@ namespace RegressionViewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn @__uses_Column {
+            public global::System.Data.DataColumn usesColumn {
                 get {
-                    return this._column_uses_;
+                    return this.columnuses;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn @__uses_module_Column {
+            public global::System.Data.DataColumn uses_moduleColumn {
                 get {
-                    return this._column_uses_module_;
+                    return this.columnuses_module;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn @__used_Column {
+            public global::System.Data.DataColumn usedColumn {
                 get {
-                    return this._column_used_;
+                    return this.columnused;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn @__used_module_Column {
+            public global::System.Data.DataColumn used_moduleColumn {
                 get {
-                    return this._column_used_module_;
+                    return this.columnused_module;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn @__rate_Column {
+            public global::System.Data.DataColumn rateColumn {
                 get {
-                    return this._column_rate_;
+                    return this.columnrate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
                 }
             }
             
@@ -399,17 +409,25 @@ namespace RegressionViewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public relsRow AddrelsRow(string @__uses_, string @__uses_module_, string @__used_, string @__used_module_, long @__rate_) {
+            public relsRow AddrelsRow(string uses, string uses_module, string used, string used_module, long rate) {
                 relsRow rowrelsRow = ((relsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        @__uses_,
-                        @__uses_module_,
-                        @__used_,
-                        @__used_module_,
-                        @__rate_};
+                        uses,
+                        uses_module,
+                        used,
+                        used_module,
+                        rate,
+                        null};
                 rowrelsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowrelsRow);
                 return rowrelsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public relsRow FindByid(long id) {
+                return ((relsRow)(this.Rows.Find(new object[] {
+                            id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -429,45 +447,45 @@ namespace RegressionViewer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this._column_uses_ = base.Columns["[uses]"];
-                this._column_uses_module_ = base.Columns["[uses_module]"];
-                this._column_used_ = base.Columns["[used]"];
-                this._column_used_module_ = base.Columns["[used_module]"];
-                this._column_rate_ = base.Columns["[rate]"];
+                this.columnuses = base.Columns["uses"];
+                this.columnuses_module = base.Columns["uses_module"];
+                this.columnused = base.Columns["used"];
+                this.columnused_module = base.Columns["used_module"];
+                this.columnrate = base.Columns["rate"];
+                this.columnid = base.Columns["id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this._column_uses_ = new global::System.Data.DataColumn("[uses]", typeof(string), null, global::System.Data.MappingType.Element);
-                this._column_uses_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_uses_");
-                this._column_uses_.ExtendedProperties.Add("Generator_UserColumnName", "[uses]");
-                base.Columns.Add(this._column_uses_);
-                this._column_uses_module_ = new global::System.Data.DataColumn("[uses_module]", typeof(string), null, global::System.Data.MappingType.Element);
-                this._column_uses_module_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_uses_module_");
-                this._column_uses_module_.ExtendedProperties.Add("Generator_UserColumnName", "[uses_module]");
-                base.Columns.Add(this._column_uses_module_);
-                this._column_used_ = new global::System.Data.DataColumn("[used]", typeof(string), null, global::System.Data.MappingType.Element);
-                this._column_used_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_used_");
-                this._column_used_.ExtendedProperties.Add("Generator_UserColumnName", "[used]");
-                base.Columns.Add(this._column_used_);
-                this._column_used_module_ = new global::System.Data.DataColumn("[used_module]", typeof(string), null, global::System.Data.MappingType.Element);
-                this._column_used_module_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_used_module_");
-                this._column_used_module_.ExtendedProperties.Add("Generator_UserColumnName", "[used_module]");
-                base.Columns.Add(this._column_used_module_);
-                this._column_rate_ = new global::System.Data.DataColumn("[rate]", typeof(long), null, global::System.Data.MappingType.Element);
-                this._column_rate_.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column_rate_");
-                this._column_rate_.ExtendedProperties.Add("Generator_UserColumnName", "[rate]");
-                base.Columns.Add(this._column_rate_);
-                this._column_uses_.AllowDBNull = false;
-                this._column_uses_.MaxLength = 255;
-                this._column_uses_module_.AllowDBNull = false;
-                this._column_uses_module_.MaxLength = 255;
-                this._column_used_.AllowDBNull = false;
-                this._column_used_.MaxLength = 255;
-                this._column_used_module_.AllowDBNull = false;
-                this._column_used_module_.MaxLength = 255;
-                this._column_rate_.AllowDBNull = false;
+                this.columnuses = new global::System.Data.DataColumn("uses", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuses);
+                this.columnuses_module = new global::System.Data.DataColumn("uses_module", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuses_module);
+                this.columnused = new global::System.Data.DataColumn("used", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnused);
+                this.columnused_module = new global::System.Data.DataColumn("used_module", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnused_module);
+                this.columnrate = new global::System.Data.DataColumn("rate", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrate);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnuses.AllowDBNull = false;
+                this.columnuses.MaxLength = 255;
+                this.columnuses_module.AllowDBNull = false;
+                this.columnuses_module.MaxLength = 255;
+                this.columnused.AllowDBNull = false;
+                this.columnused.MaxLength = 255;
+                this.columnused_module.AllowDBNull = false;
+                this.columnused_module.MaxLength = 255;
+                this.columnrate.AllowDBNull = false;
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -610,56 +628,67 @@ namespace RegressionViewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string @__uses_ {
+            public string uses {
                 get {
-                    return ((string)(this[this.tablerels.@__uses_Column]));
+                    return ((string)(this[this.tablerels.usesColumn]));
                 }
                 set {
-                    this[this.tablerels.@__uses_Column] = value;
+                    this[this.tablerels.usesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string @__uses_module_ {
+            public string uses_module {
                 get {
-                    return ((string)(this[this.tablerels.@__uses_module_Column]));
+                    return ((string)(this[this.tablerels.uses_moduleColumn]));
                 }
                 set {
-                    this[this.tablerels.@__uses_module_Column] = value;
+                    this[this.tablerels.uses_moduleColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string @__used_ {
+            public string used {
                 get {
-                    return ((string)(this[this.tablerels.@__used_Column]));
+                    return ((string)(this[this.tablerels.usedColumn]));
                 }
                 set {
-                    this[this.tablerels.@__used_Column] = value;
+                    this[this.tablerels.usedColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string @__used_module_ {
+            public string used_module {
                 get {
-                    return ((string)(this[this.tablerels.@__used_module_Column]));
+                    return ((string)(this[this.tablerels.used_moduleColumn]));
                 }
                 set {
-                    this[this.tablerels.@__used_module_Column] = value;
+                    this[this.tablerels.used_moduleColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long @__rate_ {
+            public long rate {
                 get {
-                    return ((long)(this[this.tablerels.@__rate_Column]));
+                    return ((long)(this[this.tablerels.rateColumn]));
                 }
                 set {
-                    this[this.tablerels.@__rate_Column] = value;
+                    this[this.tablerels.rateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long id {
+                get {
+                    return ((long)(this[this.tablerels.idColumn]));
+                }
+                set {
+                    this[this.tablerels.idColumn] = value;
                 }
             }
         }
@@ -699,7 +728,7 @@ namespace RegressionViewer {
         }
     }
 }
-namespace RegressionViewer.RelsDataSetTableAdapters {
+namespace RegressionViewer.DataSets.RelsDataSetTableAdapters {
     
     
     /// <summary>
@@ -823,11 +852,12 @@ namespace RegressionViewer.RelsDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "rels";
-            tableMapping.ColumnMappings.Add("[uses]", "[uses]");
-            tableMapping.ColumnMappings.Add("[uses_module]", "[uses_module]");
-            tableMapping.ColumnMappings.Add("[used]", "[used]");
-            tableMapping.ColumnMappings.Add("[used_module]", "[used_module]");
-            tableMapping.ColumnMappings.Add("[rate]", "[rate]");
+            tableMapping.ColumnMappings.Add("uses", "uses");
+            tableMapping.ColumnMappings.Add("uses_module", "uses_module");
+            tableMapping.ColumnMappings.Add("used", "used");
+            tableMapping.ColumnMappings.Add("used_module", "used_module");
+            tableMapping.ColumnMappings.Add("rate", "rate");
+            tableMapping.ColumnMappings.Add("id", "id");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -844,7 +874,8 @@ namespace RegressionViewer.RelsDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [uses], [uses_module], [used], [used_module], [rate] FROM [rels]";
+            this._commandCollection[0].CommandText = "SELECT        uses, uses_module, used, used_module, rate, id\r\nFROM            rel" +
+                "s";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

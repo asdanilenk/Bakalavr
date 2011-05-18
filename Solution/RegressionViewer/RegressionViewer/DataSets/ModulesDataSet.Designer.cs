@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace RegressionViewer {
+namespace RegressionViewer.DataSets {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace RegressionViewer {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("FilesDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ModulesDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class FilesDataSet : global::System.Data.DataSet {
+    public partial class ModulesDataSet : global::System.Data.DataSet {
         
-        private filesDataTable tablefiles;
+        private modulesDataTable tablemodules;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public FilesDataSet() {
+        public ModulesDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace RegressionViewer {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected FilesDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ModulesDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace RegressionViewer {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["files"] != null)) {
-                    base.Tables.Add(new filesDataTable(ds.Tables["files"]));
+                if ((ds.Tables["modules"] != null)) {
+                    base.Tables.Add(new modulesDataTable(ds.Tables["modules"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace RegressionViewer {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public filesDataTable files {
+        public modulesDataTable modules {
             get {
-                return this.tablefiles;
+                return this.tablemodules;
             }
         }
         
@@ -127,7 +127,7 @@ namespace RegressionViewer {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            FilesDataSet cln = ((FilesDataSet)(base.Clone()));
+            ModulesDataSet cln = ((ModulesDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace RegressionViewer {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["files"] != null)) {
-                    base.Tables.Add(new filesDataTable(ds.Tables["files"]));
+                if ((ds.Tables["modules"] != null)) {
+                    base.Tables.Add(new modulesDataTable(ds.Tables["modules"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace RegressionViewer {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablefiles = ((filesDataTable)(base.Tables["files"]));
+            this.tablemodules = ((modulesDataTable)(base.Tables["modules"]));
             if ((initTable == true)) {
-                if ((this.tablefiles != null)) {
-                    this.tablefiles.InitVars();
+                if ((this.tablemodules != null)) {
+                    this.tablemodules.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace RegressionViewer {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "FilesDataSet";
+            this.DataSetName = "ModulesDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/FilesDataSet.xsd";
+            this.Namespace = "http://tempuri.org/ModulesDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablefiles = new filesDataTable();
-            base.Tables.Add(this.tablefiles);
+            this.tablemodules = new modulesDataTable();
+            base.Tables.Add(this.tablemodules);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializefiles() {
+        private bool ShouldSerializemodules() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace RegressionViewer {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            FilesDataSet ds = new FilesDataSet();
+            ModulesDataSet ds = new ModulesDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,25 +270,23 @@ namespace RegressionViewer {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void filesRowChangeEventHandler(object sender, filesRowChangeEvent e);
+        public delegate void modulesRowChangeEventHandler(object sender, modulesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class filesDataTable : global::System.Data.TypedTableBase<filesRow> {
-            
-            private global::System.Data.DataColumn columnid;
+        public partial class modulesDataTable : global::System.Data.TypedTableBase<modulesRow> {
             
             private global::System.Data.DataColumn columnname;
             
-            private global::System.Data.DataColumn columnmodule_id;
+            private global::System.Data.DataColumn columnid;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public filesDataTable() {
-                this.TableName = "files";
+            public modulesDataTable() {
+                this.TableName = "modules";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +294,7 @@ namespace RegressionViewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal filesDataTable(global::System.Data.DataTable table) {
+            internal modulesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,17 +311,9 @@ namespace RegressionViewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected filesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected modulesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -336,9 +326,9 @@ namespace RegressionViewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn module_idColumn {
+            public global::System.Data.DataColumn idColumn {
                 get {
-                    return this.columnmodule_id;
+                    return this.columnid;
                 }
             }
             
@@ -353,54 +343,53 @@ namespace RegressionViewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public filesRow this[int index] {
+            public modulesRow this[int index] {
                 get {
-                    return ((filesRow)(this.Rows[index]));
+                    return ((modulesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event filesRowChangeEventHandler filesRowChanging;
+            public event modulesRowChangeEventHandler modulesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event filesRowChangeEventHandler filesRowChanged;
+            public event modulesRowChangeEventHandler modulesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event filesRowChangeEventHandler filesRowDeleting;
+            public event modulesRowChangeEventHandler modulesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event filesRowChangeEventHandler filesRowDeleted;
+            public event modulesRowChangeEventHandler modulesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddfilesRow(filesRow row) {
+            public void AddmodulesRow(modulesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public filesRow AddfilesRow(string name, long module_id) {
-                filesRow rowfilesRow = ((filesRow)(this.NewRow()));
+            public modulesRow AddmodulesRow(string name) {
+                modulesRow rowmodulesRow = ((modulesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         name,
-                        module_id};
-                rowfilesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowfilesRow);
-                return rowfilesRow;
+                        null};
+                rowmodulesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowmodulesRow);
+                return rowmodulesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public filesRow FindByid(long id) {
-                return ((filesRow)(this.Rows.Find(new object[] {
+            public modulesRow FindByid(long id) {
+                return ((modulesRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                filesDataTable cln = ((filesDataTable)(base.Clone()));
+                modulesDataTable cln = ((modulesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -408,61 +397,58 @@ namespace RegressionViewer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new filesDataTable();
+                return new modulesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
                 this.columnname = base.Columns["name"];
-                this.columnmodule_id = base.Columns["module_id"];
+                this.columnid = base.Columns["id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname);
-                this.columnmodule_id = new global::System.Data.DataColumn("module_id", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmodule_id);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
+                this.columnname.AllowDBNull = false;
+                this.columnname.MaxLength = 255;
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
-                this.columnname.AllowDBNull = false;
-                this.columnname.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public filesRow NewfilesRow() {
-                return ((filesRow)(this.NewRow()));
+            public modulesRow NewmodulesRow() {
+                return ((modulesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new filesRow(builder);
+                return new modulesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(filesRow);
+                return typeof(modulesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.filesRowChanged != null)) {
-                    this.filesRowChanged(this, new filesRowChangeEvent(((filesRow)(e.Row)), e.Action));
+                if ((this.modulesRowChanged != null)) {
+                    this.modulesRowChanged(this, new modulesRowChangeEvent(((modulesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -470,8 +456,8 @@ namespace RegressionViewer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.filesRowChanging != null)) {
-                    this.filesRowChanging(this, new filesRowChangeEvent(((filesRow)(e.Row)), e.Action));
+                if ((this.modulesRowChanging != null)) {
+                    this.modulesRowChanging(this, new modulesRowChangeEvent(((modulesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -479,8 +465,8 @@ namespace RegressionViewer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.filesRowDeleted != null)) {
-                    this.filesRowDeleted(this, new filesRowChangeEvent(((filesRow)(e.Row)), e.Action));
+                if ((this.modulesRowDeleted != null)) {
+                    this.modulesRowDeleted(this, new modulesRowChangeEvent(((modulesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -488,14 +474,14 @@ namespace RegressionViewer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.filesRowDeleting != null)) {
-                    this.filesRowDeleting(this, new filesRowChangeEvent(((filesRow)(e.Row)), e.Action));
+                if ((this.modulesRowDeleting != null)) {
+                    this.modulesRowDeleting(this, new modulesRowChangeEvent(((modulesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovefilesRow(filesRow row) {
+            public void RemovemodulesRow(modulesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -504,7 +490,7 @@ namespace RegressionViewer {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                FilesDataSet ds = new FilesDataSet();
+                ModulesDataSet ds = new ModulesDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -522,7 +508,7 @@ namespace RegressionViewer {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "filesDataTable";
+                attribute2.FixedValue = "modulesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -566,65 +552,37 @@ namespace RegressionViewer {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class filesRow : global::System.Data.DataRow {
+        public partial class modulesRow : global::System.Data.DataRow {
             
-            private filesDataTable tablefiles;
+            private modulesDataTable tablemodules;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal filesRow(global::System.Data.DataRowBuilder rb) : 
+            internal modulesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablefiles = ((filesDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long id {
-                get {
-                    return ((long)(this[this.tablefiles.idColumn]));
-                }
-                set {
-                    this[this.tablefiles.idColumn] = value;
-                }
+                this.tablemodules = ((modulesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string name {
                 get {
-                    return ((string)(this[this.tablefiles.nameColumn]));
+                    return ((string)(this[this.tablemodules.nameColumn]));
                 }
                 set {
-                    this[this.tablefiles.nameColumn] = value;
+                    this[this.tablemodules.nameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public long module_id {
+            public long id {
                 get {
-                    try {
-                        return ((long)(this[this.tablefiles.module_idColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'module_id\' in table \'files\' is DBNull.", e);
-                    }
+                    return ((long)(this[this.tablemodules.idColumn]));
                 }
                 set {
-                    this[this.tablefiles.module_idColumn] = value;
+                    this[this.tablemodules.idColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Ismodule_idNull() {
-                return this.IsNull(this.tablefiles.module_idColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setmodule_idNull() {
-                this[this.tablefiles.module_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -632,22 +590,22 @@ namespace RegressionViewer {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class filesRowChangeEvent : global::System.EventArgs {
+        public class modulesRowChangeEvent : global::System.EventArgs {
             
-            private filesRow eventRow;
+            private modulesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public filesRowChangeEvent(filesRow row, global::System.Data.DataRowAction action) {
+            public modulesRowChangeEvent(modulesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public filesRow Row {
+            public modulesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -663,7 +621,8 @@ namespace RegressionViewer {
         }
     }
 }
-namespace RegressionViewer.FilesDataSetTableAdapters {
+namespace RegressionViewer.DataSets.ModulesDataSetTableAdapters
+{
     
     
     /// <summary>
@@ -675,7 +634,7 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class filesTableAdapter : global::System.ComponentModel.Component {
+    public partial class modulesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SQLite.SQLiteDataAdapter _adapter;
         
@@ -689,7 +648,7 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public filesTableAdapter() {
+        public modulesTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -786,50 +745,41 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
             this._adapter = new global::System.Data.SQLite.SQLiteDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "files";
-            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.DataSetTable = "modules";
             tableMapping.ColumnMappings.Add("name", "name");
-            tableMapping.ColumnMappings.Add("module_id", "module_id");
+            tableMapping.ColumnMappings.Add("id", "id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [files] WHERE (([id] = @Original_id) AND ([name] = @Original_name) AN" +
-                "D ((@IsNull_module_id = 1 AND [module_id] IS NULL) OR ([module_id] = @Original_m" +
-                "odule_id)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [modules] WHERE (([name] = @Original_name) AND ([id] = @Original_id))" +
+                "";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::System.Data.SQLite.SQLiteParameter param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_id";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SourceColumn = "id";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Original_name";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "name";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_module_id";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "module_id";
+            param.ParameterName = "@Original_id";
+            param.DbType = global::System.Data.DbType.Int64;
+            param.DbType = global::System.Data.DbType.Int64;
+            param.SourceColumn = "id";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::System.Data.SQLite.SQLiteCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [modules] ([name]) VALUES (@name)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_module_id";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SourceColumn = "module_id";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
+            param.ParameterName = "@name";
+            param.DbType = global::System.Data.DbType.String;
+            param.SourceColumn = "name";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::System.Data.SQLite.SQLiteCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [files] SET [name] = @name, [module_id] = @module_id WHERE (([id] = @Origi" +
-                "nal_id) AND ([name] = @Original_name) AND ((@IsNull_module_id = 1 AND [module_id" +
-                "] IS NULL) OR ([module_id] = @Original_module_id)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [modules] SET [name] = @name WHERE (([name] = @Original_name) AND ([id] = " +
+                "@Original_id))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@name";
@@ -837,37 +787,16 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
             param.SourceColumn = "name";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@module_id";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SourceColumn = "module_id";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_id";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.SourceColumn = "id";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
             param.ParameterName = "@Original_name";
             param.DbType = global::System.Data.DbType.String;
             param.SourceColumn = "name";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@IsNull_module_id";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.DbType = global::System.Data.DbType.Int32;
-            param.SourceColumn = "module_id";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@Original_module_id";
+            param.ParameterName = "@Original_id";
             param.DbType = global::System.Data.DbType.Int64;
             param.DbType = global::System.Data.DbType.Int64;
-            param.SourceColumn = "module_id";
+            param.SourceColumn = "id";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -882,41 +811,18 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[3];
+            this._commandCollection = new global::System.Data.SQLite.SQLiteCommand[1];
             this._commandCollection[0] = new global::System.Data.SQLite.SQLiteCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [id], [name], [module_id] FROM [files]";
+            this._commandCollection[0].CommandText = "SELECT name, id FROM modules";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SQLite.SQLiteCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT [id], [name], [module_id] FROM [files] where [module_id] = @usesComboValue" +
-                "";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            global::System.Data.SQLite.SQLiteParameter param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@usesComboValue";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.Size = 8;
-            param.SourceColumn = "module_id";
-            this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::System.Data.SQLite.SQLiteCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT [id], [name], [module_id] FROM [files] where [module_id] = @usesModule";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            param = new global::System.Data.SQLite.SQLiteParameter();
-            param.ParameterName = "@usesModule";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.DbType = global::System.Data.DbType.Int64;
-            param.Size = 8;
-            param.SourceColumn = "module_id";
-            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(FilesDataSet.filesDataTable dataTable) {
+        public virtual int Fill(ModulesDataSet.modulesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -929,9 +835,9 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual FilesDataSet.filesDataTable GetData() {
+        public virtual ModulesDataSet.modulesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            FilesDataSet.filesDataTable dataTable = new FilesDataSet.filesDataTable();
+            ModulesDataSet.modulesDataTable dataTable = new ModulesDataSet.modulesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -939,53 +845,15 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(FilesDataSet.filesDataTable dataTable, global::System.Nullable<long> usesComboValue) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((usesComboValue.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(usesComboValue.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy1(FilesDataSet.filesDataTable dataTable, global::System.Nullable<long> usesModule) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((usesModule.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((long)(usesModule.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FilesDataSet.filesDataTable dataTable) {
+        public virtual int Update(ModulesDataSet.modulesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(FilesDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "files");
+        public virtual int Update(ModulesDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "modules");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1002,90 +870,6 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_id, string Original_name, global::System.Nullable<long> Original_module_id) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_id));
-            if ((Original_name == null)) {
-                throw new global::System.ArgumentNullException("Original_name");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_name));
-            }
-            if ((Original_module_id.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((long)(Original_module_id.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, global::System.Nullable<long> module_id, long Original_id, string Original_name, global::System.Nullable<long> Original_module_id) {
-            if ((name == null)) {
-                throw new global::System.ArgumentNullException("name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(name));
-            }
-            if ((module_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(module_id.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((long)(Original_id));
-            if ((Original_name == null)) {
-                throw new global::System.ArgumentNullException("Original_name");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_name));
-            }
-            if ((Original_module_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((long)(Original_module_id.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
     }
     
     /// <summary>
@@ -1100,7 +884,7 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private filesTableAdapter _filesTableAdapter;
+        private modulesTableAdapter _modulesTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1122,12 +906,12 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public filesTableAdapter filesTableAdapter {
+        public modulesTableAdapter modulesTableAdapter {
             get {
-                return this._filesTableAdapter;
+                return this._modulesTableAdapter;
             }
             set {
-                this._filesTableAdapter = value;
+                this._modulesTableAdapter = value;
             }
         }
         
@@ -1150,9 +934,9 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._filesTableAdapter != null) 
-                            && (this._filesTableAdapter.Connection != null))) {
-                    return this._filesTableAdapter.Connection;
+                if (((this._modulesTableAdapter != null) 
+                            && (this._modulesTableAdapter.Connection != null))) {
+                    return this._modulesTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1167,7 +951,7 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._filesTableAdapter != null)) {
+                if ((this._modulesTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1179,14 +963,14 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(FilesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ModulesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._filesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.files.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._modulesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.modules.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._filesTableAdapter.Update(updatedRows));
+                    result = (result + this._modulesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1198,13 +982,13 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(FilesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ModulesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._filesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.files.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._modulesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.modules.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._filesTableAdapter.Update(addedRows));
+                    result = (result + this._modulesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1216,13 +1000,13 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(FilesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ModulesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._filesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.files.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._modulesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.modules.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._filesTableAdapter.Update(deletedRows));
+                    result = (result + this._modulesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1258,15 +1042,15 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(FilesDataSet dataSet) {
+        public virtual int UpdateAll(ModulesDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._filesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._filesTableAdapter.Connection) == false))) {
+            if (((this._modulesTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._modulesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1302,13 +1086,13 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._filesTableAdapter != null)) {
-                    revertConnections.Add(this._filesTableAdapter, this._filesTableAdapter.Connection);
-                    this._filesTableAdapter.Connection = ((global::System.Data.SQLite.SQLiteConnection)(workConnection));
-                    this._filesTableAdapter.Transaction = ((global::System.Data.SQLite.SQLiteTransaction)(workTransaction));
-                    if (this._filesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._filesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._filesTableAdapter.Adapter);
+                if ((this._modulesTableAdapter != null)) {
+                    revertConnections.Add(this._modulesTableAdapter, this._modulesTableAdapter.Connection);
+                    this._modulesTableAdapter.Connection = ((global::System.Data.SQLite.SQLiteConnection)(workConnection));
+                    this._modulesTableAdapter.Transaction = ((global::System.Data.SQLite.SQLiteTransaction)(workTransaction));
+                    if (this._modulesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._modulesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._modulesTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1369,9 +1153,9 @@ namespace RegressionViewer.FilesDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._filesTableAdapter != null)) {
-                    this._filesTableAdapter.Connection = ((global::System.Data.SQLite.SQLiteConnection)(revertConnections[this._filesTableAdapter]));
-                    this._filesTableAdapter.Transaction = null;
+                if ((this._modulesTableAdapter != null)) {
+                    this._modulesTableAdapter.Connection = ((global::System.Data.SQLite.SQLiteConnection)(revertConnections[this._modulesTableAdapter]));
+                    this._modulesTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

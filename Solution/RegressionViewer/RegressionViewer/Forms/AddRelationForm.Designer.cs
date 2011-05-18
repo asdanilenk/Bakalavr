@@ -1,4 +1,7 @@
-﻿namespace RegressionViewer
+﻿using RegressionViewer.DataSets;
+using RegressionViewer.DataSets.FilesDataSetTableAdapters;
+using RegressionViewer.DataSets.ModulesDataSetTableAdapters;
+namespace RegressionViewer.Forms
 {
     partial class AddRelation
     {
@@ -36,25 +39,36 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.usesModuleCombo = new System.Windows.Forms.ComboBox();
-            this.modulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.modulesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.modulesDataSet = new RegressionViewer.ModulesDataSet();
+            this.usesModulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usesModulesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usesModulesDataSet = new RegressionViewer.DataSets.ModulesDataSet();
+            this.usedModulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usedModulesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usedModulesDataSet = new RegressionViewer.DataSets.ModulesDataSet();
             this.usesNameCombo = new System.Windows.Forms.ComboBox();
-            this.filesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.filesDataSet = new RegressionViewer.FilesDataSet();
+            this.usesFilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usesFilesDataSet = new RegressionViewer.DataSets.FilesDataSet();
+            this.usedFilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usedFilesDataSet = new RegressionViewer.DataSets.FilesDataSet();
             this.usedModuleCombo = new System.Windows.Forms.ComboBox();
             this.usedNameCombo = new System.Windows.Forms.ComboBox();
-            this.rankUpDown = new System.Windows.Forms.NumericUpDown();
+            this.rateUpDown = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.filesTableAdapter = new RegressionViewer.FilesDataSetTableAdapters.filesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.modulesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modulesDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modulesDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filesDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rankUpDown)).BeginInit();
+            this.filesTableAdapter = new RegressionViewer.DataSets.FilesDataSetTableAdapters.filesTableAdapter();
+            this.modulesTableAdapter = new RegressionViewer.DataSets.ModulesDataSetTableAdapters.modulesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.usesModulesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usesModulesDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usesModulesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usedModulesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usedModulesDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usedModulesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usesFilesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usesFilesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usedFilesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usedFilesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rateUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -113,85 +127,112 @@
             // 
             // usesModuleCombo
             // 
-            this.usesModuleCombo.DataSource = this.modulesBindingSource;
+            this.usesModuleCombo.DataSource = this.usesModulesBindingSource;
             this.usesModuleCombo.DisplayMember = "name";
             this.usesModuleCombo.FormattingEnabled = true;
             this.usesModuleCombo.Location = new System.Drawing.Point(160, 13);
             this.usesModuleCombo.Name = "usesModuleCombo";
-            this.usesModuleCombo.Size = new System.Drawing.Size(121, 21);
+            this.usesModuleCombo.Size = new System.Drawing.Size(208, 21);
             this.usesModuleCombo.TabIndex = 6;
             this.usesModuleCombo.ValueMember = "id";
+            this.usesModuleCombo.SelectedIndexChanged += new System.EventHandler(this.fillFilesUsingParametrizedQuery);
             // 
-            // modulesBindingSource
+            // usesModulesBindingSource
             // 
-            this.modulesBindingSource.DataMember = "modules";
-            this.modulesBindingSource.DataSource = this.modulesDataSetBindingSource;
+            this.usesModulesBindingSource.DataMember = "modules";
+            this.usesModulesBindingSource.DataSource = this.usesModulesDataSetBindingSource;
             // 
-            // modulesDataSetBindingSource
+            // usesModulesDataSetBindingSource
             // 
-            this.modulesDataSetBindingSource.DataSource = this.modulesDataSet;
-            this.modulesDataSetBindingSource.Position = 0;
+            this.usesModulesDataSetBindingSource.DataSource = this.usesModulesDataSet;
+            this.usesModulesDataSetBindingSource.Position = 0;
             // 
-            // modulesDataSet
+            // usesModulesDataSet
             // 
-            this.modulesDataSet.DataSetName = "ProgramDataSet";
-            this.modulesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.usesModulesDataSet.DataSetName = "ModulesDataSet";
+            this.usesModulesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usedModulesBindingSource
+            // 
+            this.usedModulesBindingSource.DataMember = "modules";
+            this.usedModulesBindingSource.DataSource = this.usedModulesDataSetBindingSource;
+            // 
+            // usedModulesDataSetBindingSource
+            // 
+            this.usedModulesDataSetBindingSource.DataSource = this.usedModulesDataSet;
+            this.usedModulesDataSetBindingSource.Position = 0;
+            // 
+            // usedModulesDataSet
+            // 
+            this.usedModulesDataSet.DataSetName = "ModulesDataSet";
+            this.usedModulesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usesNameCombo
             // 
-            this.usesNameCombo.DataSource = this.filesBindingSource;
+            this.usesNameCombo.DataSource = this.usesFilesBindingSource;
             this.usesNameCombo.DisplayMember = "name";
             this.usesNameCombo.FormattingEnabled = true;
             this.usesNameCombo.Location = new System.Drawing.Point(160, 41);
             this.usesNameCombo.Name = "usesNameCombo";
-            this.usesNameCombo.Size = new System.Drawing.Size(121, 21);
+            this.usesNameCombo.Size = new System.Drawing.Size(208, 21);
             this.usesNameCombo.TabIndex = 7;
             this.usesNameCombo.ValueMember = "id";
             // 
-            // filesBindingSource
+            // usesFilesBindingSource
             // 
-            this.filesBindingSource.DataMember = "files";
-            this.filesBindingSource.DataSource = this.filesDataSet;
+            this.usesFilesBindingSource.DataMember = "files";
+            this.usesFilesBindingSource.DataSource = this.usesFilesDataSet;
             // 
-            // filesDataSet
+            // usesFilesDataSet
             // 
-            this.filesDataSet.DataSetName = "FilesDataSet";
-            this.filesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.usesFilesDataSet.DataSetName = "usesFilesDataSet";
+            this.usesFilesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usedFilesBindingSource
+            // 
+            this.usedFilesBindingSource.DataMember = "files";
+            this.usedFilesBindingSource.DataSource = this.usedFilesDataSet;
+            // 
+            // usedFilesDataSet
+            // 
+            this.usedFilesDataSet.DataSetName = "usedFilesDataSet";
+            this.usedFilesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usedModuleCombo
             // 
-            this.usedModuleCombo.DataSource = this.modulesBindingSource;
+            this.usedModuleCombo.DataSource = this.usedModulesBindingSource;
             this.usedModuleCombo.DisplayMember = "name";
             this.usedModuleCombo.FormattingEnabled = true;
             this.usedModuleCombo.Location = new System.Drawing.Point(160, 70);
             this.usedModuleCombo.Name = "usedModuleCombo";
-            this.usedModuleCombo.Size = new System.Drawing.Size(121, 21);
+            this.usedModuleCombo.Size = new System.Drawing.Size(208, 21);
             this.usedModuleCombo.TabIndex = 8;
             this.usedModuleCombo.ValueMember = "id";
+            this.usedModuleCombo.SelectedIndexChanged += new System.EventHandler(this.fillFilesUsingParametrizedQuery);
             // 
             // usedNameCombo
             // 
-            this.usedNameCombo.DataSource = this.filesBindingSource;
+            this.usedNameCombo.DataSource = this.usedFilesBindingSource;
             this.usedNameCombo.DisplayMember = "name";
             this.usedNameCombo.FormattingEnabled = true;
             this.usedNameCombo.Location = new System.Drawing.Point(160, 97);
             this.usedNameCombo.Name = "usedNameCombo";
-            this.usedNameCombo.Size = new System.Drawing.Size(121, 21);
+            this.usedNameCombo.Size = new System.Drawing.Size(208, 21);
             this.usedNameCombo.TabIndex = 9;
             this.usedNameCombo.ValueMember = "id";
             // 
-            // rankUpDown
+            // rateUpDown
             // 
-            this.rankUpDown.Location = new System.Drawing.Point(160, 125);
-            this.rankUpDown.Maximum = new decimal(new int[] {
+            this.rateUpDown.Location = new System.Drawing.Point(160, 125);
+            this.rateUpDown.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.rankUpDown.Name = "rankUpDown";
-            this.rankUpDown.Size = new System.Drawing.Size(44, 20);
-            this.rankUpDown.TabIndex = 10;
-            this.rankUpDown.Value = new decimal(new int[] {
+            this.rateUpDown.Name = "rateUpDown";
+            this.rateUpDown.Size = new System.Drawing.Size(44, 20);
+            this.rateUpDown.TabIndex = 10;
+            this.rateUpDown.Value = new decimal(new int[] {
             5,
             0,
             0,
@@ -208,35 +249,41 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(125, 151);
+            this.AddButton.Location = new System.Drawing.Point(212, 148);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(75, 23);
             this.AddButton.TabIndex = 12;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(206, 151);
+            this.cancelButton.Location = new System.Drawing.Point(293, 148);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 13;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // filesTableAdapter
             // 
             this.filesTableAdapter.ClearBeforeFill = true;
             // 
+            // modulesTableAdapter
+            // 
+            this.modulesTableAdapter.ClearBeforeFill = true;
+            // 
             // AddRelation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 194);
+            this.ClientSize = new System.Drawing.Size(380, 180);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.rankUpDown);
+            this.Controls.Add(this.rateUpDown);
             this.Controls.Add(this.usedNameCombo);
             this.Controls.Add(this.usedModuleCombo);
             this.Controls.Add(this.usesNameCombo);
@@ -248,14 +295,20 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddRelation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddRelation";
             this.Load += new System.EventHandler(this.AddRelation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.modulesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modulesDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.modulesDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.filesDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rankUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usesModulesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usesModulesDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usesModulesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usedModulesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usedModulesDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usedModulesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usesFilesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usesFilesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usedFilesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usedFilesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rateUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,15 +326,25 @@
         private System.Windows.Forms.ComboBox usesNameCombo;
         private System.Windows.Forms.ComboBox usedModuleCombo;
         private System.Windows.Forms.ComboBox usedNameCombo;
-        private System.Windows.Forms.NumericUpDown rankUpDown;
+        private System.Windows.Forms.NumericUpDown rateUpDown;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.BindingSource modulesBindingSource;
-        private System.Windows.Forms.BindingSource modulesDataSetBindingSource;
-        private ModulesDataSet modulesDataSet;
-        private FilesDataSet filesDataSet;
-        private System.Windows.Forms.BindingSource filesBindingSource;
-        private FilesDataSetTableAdapters.filesTableAdapter filesTableAdapter;
+        
+        private modulesTableAdapter modulesTableAdapter;
+        private System.Windows.Forms.BindingSource usesModulesBindingSource;
+        private System.Windows.Forms.BindingSource usesModulesDataSetBindingSource;
+        private System.Windows.Forms.BindingSource usedModulesBindingSource;
+        private System.Windows.Forms.BindingSource usedModulesDataSetBindingSource;
+        private ModulesDataSet usesModulesDataSet;
+        private ModulesDataSet usedModulesDataSet;
+
+
+        private filesTableAdapter filesTableAdapter;
+        private System.Windows.Forms.BindingSource usesFilesBindingSource;
+        private System.Windows.Forms.BindingSource usedFilesBindingSource;
+        private FilesDataSet usesFilesDataSet;
+        private FilesDataSet usedFilesDataSet;
+        
     }
 }

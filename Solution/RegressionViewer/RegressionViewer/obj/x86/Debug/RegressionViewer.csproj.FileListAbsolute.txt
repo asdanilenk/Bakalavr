@@ -2,7 +2,6 @@ C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\RegressionViewe
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\RegressionViewer.exe
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\Aga.Controls.dll
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Form1.resources
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Properties.Resources.resources
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\GenerateResource.write.1.tlog
@@ -10,4 +9,10 @@ C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionV
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.pdb
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\RegressionViewer.pdb
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\System.Data.SQLite.Linq.dll
-C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\System.Data.SQLite.Linq.pdb
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\Microsoft.Msagl.dll
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\Microsoft.Msagl.Drawing.dll
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Forms.GraphForm.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Forms.AddRelation.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Forms.TreeForm.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Forms.RelationshipsForm.resources

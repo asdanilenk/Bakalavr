@@ -38,15 +38,24 @@
     <Reference Include="Aga.Controls">
       <HintPath>.\Aga.Controls.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Msagl">
+      <HintPath>.\Microsoft.Msagl.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Msagl.Drawing">
+      <HintPath>.\Microsoft.Msagl.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Msagl.GraphViewerGdi">
+      <HintPath>.\Microsoft.Msagl.GraphViewerGdi.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.72.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files\System.Data.SQLite\bin\System.Data.SQLite.dll</HintPath>
+      <HintPath>.\System.Data.SQLite.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.72.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files\System.Data.SQLite\bin\System.Data.SQLite.Linq.dll</HintPath>
+      <HintPath>.\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,49 +67,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddRelation.cs">
+    <Compile Include="Forms\AddRelationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddRelation.Designer.cs">
-      <DependentUpon>AddRelation.cs</DependentUpon>
+    <Compile Include="Forms\AddRelationForm.Designer.cs">
+      <DependentUpon>AddRelationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionManager.cs" />
-    <Compile Include="FilesDataSet.Designer.cs">
+    <Compile Include="DataSets\FilesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FilesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\GraphForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\GraphForm.Designer.cs">
+      <DependentUpon>GraphForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NodeModule.cs" />
+    <Compile Include="Forms\TreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TreeForm.Designer.cs">
+      <DependentUpon>TreeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\NodeModule.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ModulesDataSet.Designer.cs">
+    <Compile Include="DataSets\ModulesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModulesDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RelationshipsForm.cs">
+    <Compile Include="Forms\RelationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RelationshipsForm.Designer.cs">
-      <DependentUpon>RelationshipsForm.cs</DependentUpon>
+    <Compile Include="Forms\RelationsForm.Designer.cs">
+      <DependentUpon>RelationsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RelsDataSet.Designer.cs">
+    <Compile Include="DataSets\RelsDataSet.cs">
+      <DependentUpon>RelsDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\RelsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RelsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SlowTreeModel.cs" />
-    <EmbeddedResource Include="AddRelation.resx">
-      <DependentUpon>AddRelation.cs</DependentUpon>
+    <Compile Include="Tree\SlowTreeModel.cs" />
+    <EmbeddedResource Include="Forms\AddRelationForm.resx">
+      <DependentUpon>AddRelationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\GraphForm.resx">
+      <DependentUpon>GraphForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TreeForm.resx">
+      <DependentUpon>TreeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -112,30 +134,30 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RelationshipsForm.resx">
-      <DependentUpon>RelationshipsForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RelationsForm.resx">
+      <DependentUpon>RelationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="FilesDataSet.xsc">
+    <None Include="DataSets\FilesDataSet.xsc">
       <DependentUpon>FilesDataSet.xsd</DependentUpon>
     </None>
-    <None Include="FilesDataSet.xsd">
+    <None Include="DataSets\FilesDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>FilesDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FilesDataSet.xss">
+    <None Include="DataSets\FilesDataSet.xss">
       <DependentUpon>FilesDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ModulesDataSet.xsc">
+    <None Include="DataSets\ModulesDataSet.xsc">
       <DependentUpon>ModulesDataSet.xsd</DependentUpon>
     </None>
-    <None Include="ModulesDataSet.xsd">
+    <None Include="DataSets\ModulesDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>ModulesDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ModulesDataSet.xss">
+    <None Include="DataSets\ModulesDataSet.xss">
       <DependentUpon>ModulesDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -147,15 +169,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="RelsDataSet.xsc">
+    <None Include="DataSets\RelsDataSet.xsc">
       <DependentUpon>RelsDataSet.xsd</DependentUpon>
     </None>
-    <None Include="RelsDataSet.xsd">
+    <None Include="DataSets\RelsDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>RelsDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="RelsDataSet.xss">
+    <None Include="DataSets\RelsDataSet.xss">
       <DependentUpon>RelsDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>

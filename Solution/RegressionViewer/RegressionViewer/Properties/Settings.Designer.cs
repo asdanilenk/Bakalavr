@@ -26,8 +26,8 @@ namespace RegressionViewer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("data source=C:\\Bakalavr\\Solution\\RegressionViewer\\RegressionViewer\\bin\\Release\\Pr" +
-            "ogram.db3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=C:\\Bakalavr\\Solution\\RegressionViewer\\RegressionViewer\\bin\\Debug\\Prog" +
+            "ram.db3")]
         public string ProgramConnectionString {
             get {
                 return ((string)(this["ProgramConnectionString"]));

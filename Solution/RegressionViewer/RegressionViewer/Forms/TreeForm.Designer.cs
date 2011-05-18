@@ -1,6 +1,9 @@
-﻿namespace RegressionViewer
+﻿using RegressionViewer.DataSets;
+using RegressionViewer.DataSets.FilesDataSetTableAdapters;
+using RegressionViewer.DataSets.ModulesDataSetTableAdapters;
+namespace RegressionViewer.Forms
 {
-    partial class Form1
+    partial class TreeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -47,10 +50,12 @@
             this.modulesContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteModulesContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.programDataSet = new RegressionViewer.ModulesDataSet();
+            this.programDataSet = new RegressionViewer.DataSets.ModulesDataSet();
             this.applyButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.modulesTableAdapter = new RegressionViewer.ProgramDataSetTableAdapters.modulesTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
+            this.modulesTableAdapter = new RegressionViewer.DataSets.ModulesDataSetTableAdapters.modulesTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
             this.treeContextMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modulesView)).BeginInit();
             this.modulesContextMenu.SuspendLayout();
@@ -180,7 +185,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.modulesView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.modulesView.RowHeadersWidth = 15;
+            this.modulesView.RowHeadersWidth = 21;
             this.modulesView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.modulesView.RowsDefaultCellStyle = dataGridViewCellStyle5;
@@ -192,7 +197,7 @@
             this.nameModulesViewColumn.DataPropertyName = "name";
             this.nameModulesViewColumn.HeaderText = "Modules";
             this.nameModulesViewColumn.Name = "nameModulesViewColumn";
-            this.nameModulesViewColumn.Width = 200;
+            this.nameModulesViewColumn.Width = 170;
             // 
             // modulesContextMenu
             // 
@@ -215,14 +220,14 @@
             // 
             // programDataSet
             // 
-            this.programDataSet.DataSetName = "ProgramDataSet";
+            this.programDataSet.DataSetName = "ModulesDataSet";
             this.programDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // applyButton
             // 
             this.applyButton.Location = new System.Drawing.Point(553, 179);
             this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(86, 23);
+            this.applyButton.Size = new System.Drawing.Size(97, 23);
             this.applyButton.TabIndex = 4;
             this.applyButton.Text = "Apply changes";
             this.applyButton.UseVisualStyleBackColor = true;
@@ -230,29 +235,52 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(661, 178);
+            this.cancelButton.Location = new System.Drawing.Point(662, 179);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(97, 23);
             this.cancelButton.TabIndex = 5;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(553, 208);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Files Relations";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // modulesTableAdapter
             // 
             this.modulesTableAdapter.ClearBeforeFill = true;
             // 
-            // Form1
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(662, 208);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Modules Graph";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // TreeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 326);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.modulesView);
             this.Controls.Add(this.treeView);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "TreeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Modules structure";
             this.Load += new System.EventHandler(this.TreeView_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.treeContextMenu.ResumeLayout(false);
@@ -275,14 +303,16 @@
         private System.Windows.Forms.DataGridView modulesView;
         private ModulesDataSet programDataSet;
         private System.Windows.Forms.BindingSource modulesBindingSource;
-        private ProgramDataSetTableAdapters.modulesTableAdapter modulesTableAdapter;
+        private modulesTableAdapter modulesTableAdapter;
         private System.Windows.Forms.Button applyButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameModulesViewColumn;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.ContextMenuStrip treeContextMenu;
         private System.Windows.Forms.ToolStripMenuItem deleteTreeContextMenuItem;
         private System.Windows.Forms.ContextMenuStrip modulesContextMenu;
         private System.Windows.Forms.ToolStripMenuItem deleteModulesContextMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameModulesViewColumn;
+        private System.Windows.Forms.Button button2;
 		
     }
 }
