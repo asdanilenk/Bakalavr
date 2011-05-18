@@ -1,0 +1,15 @@
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Release\RegressionViewer.exe.config
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Release\RegressionViewer.exe
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Release\RegressionViewer.pdb
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Release\Aga.Controls.dll
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Release\RegressionViewer.Form1.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Release\RegressionViewer.Properties.Resources.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Release\RegressionViewer.exe
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Release\RegressionViewer.pdb
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Release\System.Data.SQLite.Linq.dll
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Release\System.Data.SQLite.Linq.pdb
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Release\RegressionViewer.RelationshipsForm.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Release\RegressionViewer.AddRelation.resources
