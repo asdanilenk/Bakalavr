@@ -23,11 +23,11 @@ namespace RegressionViewer.Forms
 
         private void AddRelation_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'filesDataSet.files' table. You can move, or remove it, as needed.
-            this.filesTableAdapter.Fill(this.usesFilesDataSet.files);
+            // TODO: This line of code loads data into the 'filesDataSet.filesGridViewColumn' table. You can move, or remove it, as needed.
             this.modulesTableAdapter.Fill(this.usesModulesDataSet.modules);
-            this.filesTableAdapter.Fill(this.usedFilesDataSet.files);
+            fillFilesUsingParametrizedQuery(usesModuleCombo, null);
             this.modulesTableAdapter.Fill(this.usedModulesDataSet.modules);
+            fillFilesUsingParametrizedQuery(usedModuleCombo, null);
         }
 
         private void fillFilesUsingParametrizedQuery(object sender, EventArgs e)

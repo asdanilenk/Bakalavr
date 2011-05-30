@@ -129,6 +129,7 @@ namespace RegressionViewer.Forms
             // 
             this.usesModuleCombo.DataSource = this.usesModulesBindingSource;
             this.usesModuleCombo.DisplayMember = "name";
+            this.usesModuleCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usesModuleCombo.FormattingEnabled = true;
             this.usesModuleCombo.Location = new System.Drawing.Point(160, 13);
             this.usesModuleCombo.Name = "usesModuleCombo";
@@ -171,6 +172,7 @@ namespace RegressionViewer.Forms
             // 
             this.usesNameCombo.DataSource = this.usesFilesBindingSource;
             this.usesNameCombo.DisplayMember = "name";
+            this.usesNameCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usesNameCombo.FormattingEnabled = true;
             this.usesNameCombo.Location = new System.Drawing.Point(160, 41);
             this.usesNameCombo.Name = "usesNameCombo";
@@ -202,6 +204,7 @@ namespace RegressionViewer.Forms
             // 
             this.usedModuleCombo.DataSource = this.usedModulesBindingSource;
             this.usedModuleCombo.DisplayMember = "name";
+            this.usedModuleCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usedModuleCombo.FormattingEnabled = true;
             this.usedModuleCombo.Location = new System.Drawing.Point(160, 70);
             this.usedModuleCombo.Name = "usedModuleCombo";
@@ -214,6 +217,7 @@ namespace RegressionViewer.Forms
             // 
             this.usedNameCombo.DataSource = this.usedFilesBindingSource;
             this.usedNameCombo.DisplayMember = "name";
+            this.usedNameCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usedNameCombo.FormattingEnabled = true;
             this.usedNameCombo.Location = new System.Drawing.Point(160, 97);
             this.usedNameCombo.Name = "usedNameCombo";
@@ -296,7 +300,7 @@ namespace RegressionViewer.Forms
             this.Controls.Add(this.label1);
             this.Name = "AddRelation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AddRelation";
+            this.Text = "Add Relation";
             this.Load += new System.EventHandler(this.AddRelation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usesModulesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usesModulesDataSetBindingSource)).EndInit();
@@ -322,12 +326,13 @@ namespace RegressionViewer.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+
         private System.Windows.Forms.ComboBox usesModuleCombo;
         private System.Windows.Forms.ComboBox usesNameCombo;
         private System.Windows.Forms.ComboBox usedModuleCombo;
         private System.Windows.Forms.ComboBox usedNameCombo;
         private System.Windows.Forms.NumericUpDown rateUpDown;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button cancelButton;
         

@@ -115,16 +115,14 @@ namespace RegressionViewer
         {
             return (treePath.LastNode as NodeModule).Tag.ToString().StartsWith("f");
         }
-        
+
+        #pragma warning disable 67
         public event EventHandler<TreeModelEventArgs> NodesChanged;
-
         public event EventHandler<TreeModelEventArgs> NodesInserted;
-
-
         public event EventHandler<TreeModelEventArgs> NodesRemoved;
-
         public event EventHandler<TreePathEventArgs> StructureChanged;
-        
+        #pragma warning restore 67
+
         #endregion
     }
 
