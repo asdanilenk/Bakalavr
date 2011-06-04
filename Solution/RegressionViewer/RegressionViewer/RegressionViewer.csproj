@@ -152,6 +152,7 @@
       <DependentUpon>RelationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ClassDiagram.cd" />
     <None Include="DataSets\FilesDataSet.xsc">
       <DependentUpon>FilesDataSet.xsd</DependentUpon>
     </None>
