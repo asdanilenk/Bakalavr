@@ -59,9 +59,10 @@ namespace RegressionViewer
             ExecuteNonQuery(@"CREATE TABLE [folders] (
                     [id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
                     [p_id] integer,
-                    [name] char(255) NOT NULL,
-                    FOREIGN KEY (p_id) REFERENCES folders (id) on delete cascade
+                    [name] char(255) NOT NULL
                     );");
+            // CONSTRAINT FK_folders_folders FOREIGN KEY (p_id) REFERENCES folders (id) on delete cascade
+                   
             ExecuteNonQuery(@"CREATE TABLE [modules] (
                     [id] integer PRIMARY KEY AUTOINCREMENT NOT NULL,
                     [name] char(255) NOT NULL
@@ -71,16 +72,15 @@ namespace RegressionViewer
                     [p_id] integer NOT NULL,
                     [name] char(255) NOT NULL,
                     [module_id] integer,
-                    FOREIGN KEY (p_id) REFERENCES folders (id) on delete cascade
-                    FOREIGN KEY (module_id) REFERENCES modules (id) on delete set NULL
+                    CONSTRAINT FK_files_folders FOREIGN KEY (p_id) REFERENCES folders (id) on delete cascade
+                    CONSTRAINT FK_files_modules FOREIGN KEY (module_id) REFERENCES modules (id) on delete set NULL
                     );");
             ExecuteNonQuery(@"CREATE TABLE [relationships] (
                     [id]  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                     [uses]  INTEGER NOT NULL,
                     [used]  INTEGER NOT NULL,
                     [rate]  INTEGER NOT NULL,
-                    FOREIGN KEY (uses) REFERENCES files (id) ON DELETE CASCADE,
-                    FOREIGN KEY (used) REFERENCES files (id) ON DELETE CASCADE
+                    CONSTRAINT FK_relationships_files FOREIGN KEY (uses,used) REFERENCES files (id,id) ON DELETE CASCADE
                     );");
             ExecuteNonQuery(@"CREATE VIEW [rels] AS 
                     SELECT
@@ -120,8 +120,8 @@ namespace RegressionViewer
                     id  INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                     file_id  INTEGER NOT NULL,
                     patch_id  INTEGER NOT NULL,
-                    FOREIGN KEY (file_id) REFERENCES files (id) ON DELETE CASCADE,
-                    FOREIGN KEY (patch_id) REFERENCES patches (id) ON DELETE CASCADE);");
+                    CONSTRAINT FK_patchdetails_files FOREIGN KEY (file_id) REFERENCES files (id) ON DELETE CASCADE,
+                    CONSTRAINT FK_patchdetails_patches FOREIGN KEY (patch_id) REFERENCES patches (id) ON DELETE CASCADE);");
             ExecuteNonQuery(@"CREATE VIEW patchview AS 
                     SELECT
                     patchdetails.patch_id,

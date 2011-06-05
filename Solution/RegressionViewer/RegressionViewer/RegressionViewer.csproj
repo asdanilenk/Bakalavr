@@ -103,7 +103,7 @@
       <DependentUpon>PatchesDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Tree\NodeModule.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="RegressionViewer.cs" />
     <Compile Include="DataSets\ModulesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,7 +152,6 @@
       <DependentUpon>RelationsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="ClassDiagram.cd" />
     <None Include="DataSets\FilesDataSet.xsc">
       <DependentUpon>FilesDataSet.xsd</DependentUpon>
     </None>

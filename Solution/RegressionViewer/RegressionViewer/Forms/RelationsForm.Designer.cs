@@ -41,8 +41,8 @@ namespace RegressionViewer.Forms
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.relsDataSet = new RegressionViewer.DataSets.RelsDataSet();
-            this.relsTableAdapter = new RegressionViewer.DataSets.RelsDataSetTableAdapters.relsTableAdapter();
+            this.relsDataSet = new RelsDataSet();
+            this.relsTableAdapter = new relsTableAdapter();
             this.addButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.relsGrid)).BeginInit();
