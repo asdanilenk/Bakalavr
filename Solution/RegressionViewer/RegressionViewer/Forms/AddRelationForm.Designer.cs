@@ -41,23 +41,23 @@ namespace RegressionViewer.Forms
             this.usesModuleCombo = new System.Windows.Forms.ComboBox();
             this.usesModulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usesModulesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usesModulesDataSet = new RegressionViewer.DataSets.ModulesDataSet();
+            this.usesModulesDataSet = new ModulesDataSet();
             this.usedModulesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usedModulesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usedModulesDataSet = new RegressionViewer.DataSets.ModulesDataSet();
+            this.usedModulesDataSet = new ModulesDataSet();
             this.usesNameCombo = new System.Windows.Forms.ComboBox();
             this.usesFilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usesFilesDataSet = new RegressionViewer.DataSets.FilesDataSet();
+            this.usesFilesDataSet = new FilesDataSet();
             this.usedFilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usedFilesDataSet = new RegressionViewer.DataSets.FilesDataSet();
+            this.usedFilesDataSet = new FilesDataSet();
             this.usedModuleCombo = new System.Windows.Forms.ComboBox();
             this.usedNameCombo = new System.Windows.Forms.ComboBox();
             this.rateUpDown = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
-            this.filesTableAdapter = new RegressionViewer.DataSets.FilesDataSetTableAdapters.filesTableAdapter();
-            this.modulesTableAdapter = new RegressionViewer.DataSets.ModulesDataSetTableAdapters.modulesTableAdapter();
+            this.filesTableAdapter = new filesTableAdapter();
+            this.modulesTableAdapter = new modulesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.usesModulesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usesModulesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usesModulesDataSet)).BeginInit();
@@ -129,6 +129,7 @@ namespace RegressionViewer.Forms
             // 
             this.usesModuleCombo.DataSource = this.usesModulesBindingSource;
             this.usesModuleCombo.DisplayMember = "name";
+            this.usesModuleCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usesModuleCombo.FormattingEnabled = true;
             this.usesModuleCombo.Location = new System.Drawing.Point(160, 13);
             this.usesModuleCombo.Name = "usesModuleCombo";
@@ -171,6 +172,7 @@ namespace RegressionViewer.Forms
             // 
             this.usesNameCombo.DataSource = this.usesFilesBindingSource;
             this.usesNameCombo.DisplayMember = "name";
+            this.usesNameCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usesNameCombo.FormattingEnabled = true;
             this.usesNameCombo.Location = new System.Drawing.Point(160, 41);
             this.usesNameCombo.Name = "usesNameCombo";
@@ -202,6 +204,7 @@ namespace RegressionViewer.Forms
             // 
             this.usedModuleCombo.DataSource = this.usedModulesBindingSource;
             this.usedModuleCombo.DisplayMember = "name";
+            this.usedModuleCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usedModuleCombo.FormattingEnabled = true;
             this.usedModuleCombo.Location = new System.Drawing.Point(160, 70);
             this.usedModuleCombo.Name = "usedModuleCombo";
@@ -214,6 +217,7 @@ namespace RegressionViewer.Forms
             // 
             this.usedNameCombo.DataSource = this.usedFilesBindingSource;
             this.usedNameCombo.DisplayMember = "name";
+            this.usedNameCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usedNameCombo.FormattingEnabled = true;
             this.usedNameCombo.Location = new System.Drawing.Point(160, 97);
             this.usedNameCombo.Name = "usedNameCombo";
@@ -296,7 +300,7 @@ namespace RegressionViewer.Forms
             this.Controls.Add(this.label1);
             this.Name = "AddRelation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AddRelation";
+            this.Text = "Add Relation";
             this.Load += new System.EventHandler(this.AddRelation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usesModulesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usesModulesDataSetBindingSource)).EndInit();
@@ -322,12 +326,13 @@ namespace RegressionViewer.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+
         private System.Windows.Forms.ComboBox usesModuleCombo;
         private System.Windows.Forms.ComboBox usesNameCombo;
         private System.Windows.Forms.ComboBox usedModuleCombo;
         private System.Windows.Forms.ComboBox usedNameCombo;
         private System.Windows.Forms.NumericUpDown rateUpDown;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button cancelButton;
         

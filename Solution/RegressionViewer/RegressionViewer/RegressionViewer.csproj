@@ -67,6 +67,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddPatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddPatch.Designer.cs">
+      <DependentUpon>AddPatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddRelationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,8 +97,13 @@
     <Compile Include="Forms\TreeForm.Designer.cs">
       <DependentUpon>TreeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\PatchesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatchesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Tree\NodeModule.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="RegressionViewer.cs" />
     <Compile Include="DataSets\ModulesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -115,6 +126,9 @@
       <DependentUpon>RelsDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Tree\SlowTreeModel.cs" />
+    <EmbeddedResource Include="Forms\AddPatch.resx">
+      <DependentUpon>AddPatch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddRelationForm.resx">
       <DependentUpon>AddRelationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +173,17 @@
     </None>
     <None Include="DataSets\ModulesDataSet.xss">
       <DependentUpon>ModulesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PatchesDataSet.xsc">
+      <DependentUpon>PatchesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PatchesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PatchesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\PatchesDataSet.xss">
+      <DependentUpon>PatchesDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -6,7 +6,7 @@ using RegressionViewer.Forms;
 
 namespace RegressionViewer
 {
-    static class Program
+    static class RegressionViewer
     {
         /// <summary>
         /// The main entry point for the application.

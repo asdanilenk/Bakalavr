@@ -70,7 +70,7 @@
             this.MinimumSize = new System.Drawing.Size(563, 331);
             this.Name = "GraphForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "GraphForm";
+            this.Text = "Relations Graph";
             this.ResumeLayout(false);
 
         }

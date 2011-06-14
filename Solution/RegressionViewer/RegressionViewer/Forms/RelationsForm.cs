@@ -11,15 +11,15 @@ using System.Data.SQLite;
 
 namespace RegressionViewer.Forms
 {
-    public partial class RelationshipsForm : Form
+    public partial class RelationsForm : Form
     {
-        public RelationshipsForm()
+        public RelationsForm()
         {
             InitializeComponent();
             relsTableAdapter.Connection.ConnectionString = ConnectionManager.ConnectionString;
         }
 
-        private void RelationshipsForm_Load(object sender, EventArgs e)
+        private void RelationsForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'relsDataSet.rels' table. You can move, or remove it, as needed.
             this.relsTableAdapter.Fill(this.relsDataSet.rels);
@@ -29,13 +29,11 @@ namespace RegressionViewer.Forms
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (new AddRelation()).ShowDialog();
-        }
-
-        private void RelationshipsForm_Activated(object sender, EventArgs e)
-        {
             this.relsTableAdapter.Fill(this.relsDataSet.rels);
+    
         }
 
+    
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SQLiteDataAdapter mDA = relsTableAdapter.Adapter;
@@ -53,12 +51,12 @@ namespace RegressionViewer.Forms
             this.relsTableAdapter.Fill(this.relsDataSet.rels);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addButton_Click(object sender, EventArgs e)
         {
             addToolStripMenuItem_Click(null, null);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void deleteButton_Click(object sender, EventArgs e)
         {
             deleteToolStripMenuItem_Click(null, null);
         }

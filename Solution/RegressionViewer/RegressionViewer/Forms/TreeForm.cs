@@ -19,19 +19,16 @@ namespace RegressionViewer.Forms
     {
         public TreeForm()
         {
-            string baseName = "Program.db3";
-            string folder = "C:\\Bakalavr\\Solution\\RegressionViewer\\RegressionViewer\\bin";
-            
-            ConnectionManager.filename = baseName;
-            
-            //SQLiteConnection.CreateFile(baseName);
-            //ConnectionManager.CreateDB();
-            //AddDirectoriesRecursively(folder, null);
-           
-            ConnectionManager.ExecuteNonQuery("PRAGMA foreign_keys = true;");
             InitializeComponent();
-            this.modulesTableAdapter.Connection.ConnectionString = ConnectionManager.ConnectionString;
-            
+            this.patchesStripComboBox.ComboBox.BindingContext = this.BindingContext;
+            this.patchesStripComboBox.ComboBox.DataSource = patchesBindingSource;
+            this.patchesStripComboBox.ComboBox.ValueMember = "id";
+            this.patchesStripComboBox.ComboBox.DisplayMember = "name";
+
+            this.DeletePatchToolStripMenuCombo.ComboBox.BindingContext = this.BindingContext;
+            this.DeletePatchToolStripMenuCombo.ComboBox.DataSource = patchesDelBindingSource;
+            this.DeletePatchToolStripMenuCombo.ComboBox.ValueMember = "id";
+            this.DeletePatchToolStripMenuCombo.ComboBox.DisplayMember = "name";
         }
 
         
@@ -66,17 +63,6 @@ namespace RegressionViewer.Forms
                 AddDirectoriesRecursively(cdi.FullName, p_id);
         }
 
-        private void TreeView_Load(object sender, EventArgs e)
-        {
-            this.modulesTableAdapter.Fill(this.programDataSet.modules);
-            
-            treeView.Model = new SlowTreeModel();
-
-            UpdateModulesDropDown();
-
-            
-        }
-
         private void UpdateModulesDropDown()
         {
             treeNodeModule.DropDownItems.Clear();
@@ -103,7 +89,7 @@ namespace RegressionViewer.Forms
             SQLiteConnection mCN = ConnectionManager.connection;
             SQLiteDataAdapter mDA = modulesTableAdapter.Adapter;
             SQLiteCommandBuilder mCB = new SQLiteCommandBuilder(mDA);
-            DataSet mDS = programDataSet;
+            DataSet mDS = modulesDataSet;
             DataSet dsChanges = new DataSet();
             if (!mDS.HasChanges()) return;
             dsChanges = mDS.GetChanges(DataRowState.Modified);
@@ -133,7 +119,7 @@ namespace RegressionViewer.Forms
         
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            modulesTableAdapter.Fill(programDataSet.modules);
+            modulesTableAdapter.Fill(modulesDataSet.modules);
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,25 +179,134 @@ namespace RegressionViewer.Forms
             modulesView.Rows.RemoveAt(modulesView.SelectedCells[0].RowIndex);
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
+        private void patchesStripComboBox_Click(object sender, EventArgs e)
         {
-            
+            if (patchesToolStripMenuItem.DropDown.Visible == true)
+            {
+                ToolStripComboBox cb = sender as ToolStripComboBox;
+                if (cb.ComboBox.SelectedValue != null)
+                {
+                    patchesToolStripMenuItem.DropDown.Hide();
+                    (new GraphForm(int.Parse(cb.ComboBox.SelectedValue.ToString()))).ShowDialog();
+                }
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void addPatchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new RelationshipsForm()).ShowDialog();
+            (new AddPatch()).ShowDialog();
+            this.patchesTableAdapter.Fill(this.patchesDataSet.patches);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void filesRelationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new RelationsForm()).ShowDialog();
+        }
+
+        private void modulesGraphToolStripMenuItem_Click(object sender, EventArgs e)
         {
             (new GraphForm()).ShowDialog();
         }
 
-       /* private void deleteModulesContextMenuItem_MouseDown(object sender, MouseEventArgs e)
+        private void openProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            modulesView.Rows.RemoveAt(modulesView.SelectedCells[0].RowIndex);
-        }*/
+            OpenFileDialog ofp = new OpenFileDialog();
+            ofp.Multiselect = false;
+            ofp.Filter = "sqlite3 files|*.db3";
+            ofp.FilterIndex = 1;
+            ofp.RestoreDirectory = true;
+            
+
+            if (ofp.ShowDialog() == DialogResult.OK)
+            {
+                string baseName = ofp.FileName;
+                ConnectionManager.filename = baseName;
+                setupView();
+            }            
+        }
+
+        private void setupView()
+        {
+            ConnectionManager.ExecuteNonQuery("PRAGMA foreign_keys = true;");
+            this.modulesTableAdapter.Connection.ConnectionString = ConnectionManager.ConnectionString;
+            this.patchesTableAdapter.Connection.ConnectionString = ConnectionManager.ConnectionString;
+            mainPanel.Enabled = true;
+            this.patchesTableAdapter.Fill(this.patchesDataSet.patches);
+            this.modulesTableAdapter.Fill(this.modulesDataSet.modules);
+            treeView.Model = new SlowTreeModel();
+            UpdateModulesDropDown();
+        }
+
+        private void mainPanel_EnabledChanged(object sender, EventArgs e)
+        {
+
+            foreach (System.Windows.Forms.Control ctrl in mainPanel.Controls)
+            {
+                ctrl.Enabled = mainPanel.Enabled;
+            }
+            patchesToolStripMenuItem.Enabled = mainPanel.Enabled;
+            relationsToolStripMenuItem.Enabled = mainPanel.Enabled;
+        }
+
+        private void closeProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.patchesDataSet.patches.Clear();
+            this.modulesDataSet.modules.Clear();
+            treeView.Model = null;
+            mainPanel.Enabled = false;    
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Select file to save project data";
+            sfd.Filter = "sqlite3 files|*.db3";
+            sfd.FilterIndex = 1;
+            sfd.RestoreDirectory = true;
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                fbd.Description = "Select the project sources root directory:";
+                fbd.RootFolder = Environment.SpecialFolder.MyComputer;
+                DialogResult result = fbd.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    string baseName = sfd.FileName;
+                    ConnectionManager.filename = baseName;
+                    SQLiteConnection.CreateFile(baseName);
+                    ConnectionManager.CreateDB();
+                
+                    AddDirectoriesRecursively(fbd.SelectedPath, null);
+                    setupView();
+                }
+                
+            }
+        }
+
+        private void DeletePatchToolStripMenuCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (patchesToolStripMenuItem.DropDown.Visible == true)
+            {
+                patchesToolStripMenuItem.DropDown.Hide();
+                if (MessageBox.Show("Do you want to delete '" + DeletePatchToolStripMenuCombo.ComboBox.Text + "'?",
+                                "Delete patch",
+                                MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    using (SQLiteCommand command = new SQLiteCommand(ConnectionManager.connection))
+                    {
+                        command.CommandText = @"delete from patches where id=@id";
+                        command.Parameters.Add(new SQLiteParameter("@id", DeletePatchToolStripMenuCombo.ComboBox.SelectedValue));
+                        command.ExecuteNonQuery();
+                    }
+                    patchesTableAdapter.Fill(patchesDataSet.patches);
+                }
+            }
+        }
+        
+
+        
+
     }
 }
 

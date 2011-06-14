@@ -15,4 +15,6 @@ C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionV
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\Microsoft.Msagl.GraphViewerGdi.dll
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Forms.AddRelation.resources
 C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Forms.TreeForm.resources
-C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Forms.RelationshipsForm.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Forms.AddPatch.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\obj\x86\Debug\RegressionViewer.Forms.RelationsForm.resources
+C:\Bakalavr\Solution\RegressionViewer\RegressionViewer\bin\Debug\System.Data.SQLite.dll
